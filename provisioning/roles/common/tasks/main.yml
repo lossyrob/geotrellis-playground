@@ -1,0 +1,11 @@
+---
+- name: Install Base Packages
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - git
+
+- name: Make required directories
+  file: path={{ item }} state=directory
+  with_items:
+  - /home/vagrant/opt/
+  - /home/vagrant/opt/scala-2.11.1

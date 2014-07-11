@@ -1,0 +1,24 @@
+---
+- name: Download Scala
+  get_url: url=http://downloads.typesafe.com/scala/2.11.1/scala-2.11.1.tgz dest=/home/vagrant force=yes
+
+- name: Download sbt
+  get_url: url=http://dl.bintray.com/sbt/debian/sbt-0.13.5.deb dest=/home/vagrant force=yes
+
+- name: Extract Scala
+  command: chdir=/home/vagrant tar xvzf scala-2.11.1.tgz
+
+- name: Change owner
+  file: path=/home/vagrant/scala-2.11.1 owner=vagrant group=vagrant
+
+- name: Export SCALA_HOME
+  shell: echo "\nexport SCALA_HOME=/home/vagrant/scala-2.11.1" >> /home/vagrant/.bashrc
+
+- name: Add Scala to PATH variable
+  shell: echo "export PATH=\$PATH:\$SCALA_HOME/bin" >> /home/vagrant/.bashrc
+
+- name: Source .bashrc
+  shell: source /home/vagrant/.bashrc executable=/bin/bash
+
+- name: Install sbt
+  apt: deb=/home/vagrant/sbt-0.13.5.deb

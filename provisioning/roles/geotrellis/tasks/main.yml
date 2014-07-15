@@ -3,7 +3,7 @@
   git: repo=https://github.com/geotrellis/geotrellis.git dest=/home/vagrant/geotrellis accept_hostkey=yes
 
 - name: Clone Priority Places Repository
-  git: repo=hhttps://github.com/geotrellis/priority-places.git dest=/home/vagrant/gpriority-places accept_hostkey=yes
+  git: repo=https://github.com/geotrellis/priority-places.git dest=/home/vagrant/gpriority-places accept_hostkey=yes
 
 - name: Clone Geotrellis Chattanooga Demo Repository
   git: repo=https://github.com/geotrellis/geotrellis-chatta-demo.git dest=/home/vagrant/geotrellis-chatta-demo accept_hostkey=yes

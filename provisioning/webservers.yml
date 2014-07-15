@@ -1,9 +1,9 @@
 ---
-- hosts: vagrant
+- hosts: all
   user: vagrant
   sudo: true
   roles:
-  # - common
-  # - java
-  # - scala
+  - common
+  - java
+  - scala
   - geotrellis
